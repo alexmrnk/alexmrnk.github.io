@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>alexmrnk — автоматизация на Python и Go</title>
-<meta name="description" content="Портфолио alexmrnk: Telegram-боты, автоматизация TikTok, парсеры и сервисы, которые работают на сервере без участия человека.">
+<title>alexmrnk — автоматизация рутины: боты и скрипты под вашу задачу</title>
+<meta name="description" content="Беру на себя рутину: сам выкладываю видео, слежу за объявлениями, сравниваю цены и принимаю заявки в Telegram. Работает без вашего участия.">
 <meta name="theme-color" content="#EDF0F4">
-<meta property="og:title" content="alexmrnk — автоматизация на Python и Go">
-<meta property="og:description" content="Боты, парсеры и системы автоматизации, которые работают сами.">
+<meta property="og:title" content="alexmrnk — автоматизация рутины под вашу задачу">
+<meta property="og:description" content="Скрипты и боты, которые делают рутину за вас.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232B59FF'/%3E%3Cpath d='M18 22h14a8 8 0 0 1 0 16H26M26 38l-6 6M26 38l-6-6M46 42V22' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -165,7 +165,7 @@ h2 {
 .parts li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 10px; height: 2px; background: var(--signal); }
 
 /* skills */
-.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); margin: 0; }
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 56px); margin: 0; }
 .skills dt { font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; margin-bottom: 8px; letter-spacing: -0.01em; }
 .skills dd { margin: 0; color: var(--muted); }
 
@@ -175,6 +175,18 @@ h2 {
 .stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .stack li { padding: 7px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-weight: 500; font-size: 0.97rem; }
 .stack li.main { border-color: var(--signal); }
+
+/* client-side blocks */
+.field { margin: 0 0 16px; max-width: 40em; }
+.field b { display: block; font-size: 0.85rem; font-weight: 600; color: var(--signal); margin-bottom: 2px; }
+.field p { margin: 0; }
+.skills.two { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: clamp(28px, 4vw, 48px); }
+.benefits { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 5vw, 72px); }
+.benefits li { padding: 24px 0; border-top: 1px solid var(--line); }
+.benefits li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.benefits h3 { font-size: 1.1rem; margin: 0 0 6px; font-weight: 600; }
+.benefits p { margin: 0; color: var(--muted); max-width: 32em; }
+.tech-note { margin: 28px 0 0; color: var(--muted); font-size: 0.95rem; }
 
 /* process */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: step; border-top: 2px solid var(--ink); }
@@ -204,7 +216,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: minmax(0, 1fr); }
   .project { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .skills { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .skills, .skills.two { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .benefits { grid-template-columns: minmax(0, 1fr); }
   .steps { grid-template-columns: minmax(0, 1fr); border-top: none; border-left: 2px solid var(--ink); }
   .steps li { padding: 0 0 26px 28px; }
   .steps li::before { margin-top: 0; position: absolute; left: -16px; top: 0; margin-bottom: 0; }
@@ -230,9 +243,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <div class="wrap">
     <a class="brand" href="#top">alexmrnk</a>
     <nav class="nav" aria-label="Разделы сайта">
-      <a href="#projects">Проекты</a>
-      <a href="#skills">Что делаю</a>
-      <a href="#process">Как работаю</a>
+      <a href="#solve">Что решаю</a>
+      <a href="#for-whom">Кому подойдёт</a>
+      <a href="#benefits">Что вы получите</a>
+      <a href="#process">Как проходит</a>
       <a href="#contact">Контакты</a>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Переключить тему">Тема</button>
     </nav>
@@ -245,10 +259,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <div class="hero">
     <div class="wrap">
       <div>
-        <h1>Автоматизирую то, что обычно делают руками</h1>
-        <p class="lead">Пишу на Python и Go боты, парсеры и системы, которые работают на сервере круглые сутки: публикуют контент, следят за ценами и принимают заявки без участия человека.</p>
+        <h1>Скрипты, которые берут рутину на себя</h1>
+        <p class="lead">Вы один раз объясняете, что делаете руками каждый день, а дальше это делается само: ролики выкладываются, объявления отслеживаются, цены сравниваются, заявки принимаются. Результат приходит вам в Telegram.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
+          <a class="btn btn-primary" href="#solve">Что я могу решить</a>
           <a class="btn btn-ghost" href="#contact">Обсудить задачу</a>
         </div>
       </div>
@@ -264,26 +278,26 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
           <g>
             <rect class="node n1" x="12" y="10" width="316" height="56" rx="12"/>
             <circle class="dot" cx="40" cy="38" r="5"/>
-            <text class="t-title" x="62" y="34">Триггер</text>
-            <text class="t-sub" x="62" y="53">расписание или событие</text>
+            <text class="t-title" x="62" y="34">Вы ставите задачу</text>
+            <text class="t-sub" x="62" y="53">один раз, обычными словами</text>
           </g>
           <g>
             <rect class="node n2" x="12" y="94" width="316" height="56" rx="12"/>
             <circle class="dot" cx="40" cy="122" r="5"/>
-            <text class="t-title" x="62" y="118">Python-скрипт</text>
-            <text class="t-sub" x="62" y="137">обработка и логика</text>
+            <text class="t-title" x="62" y="118">Система делает работу</text>
+            <text class="t-sub" x="62" y="137">вместо ручных действий</text>
           </g>
           <g>
             <rect class="node n3" x="12" y="178" width="316" height="56" rx="12"/>
             <circle class="dot" cx="40" cy="206" r="5"/>
-            <text class="t-title" x="62" y="202">VPS-сервер</text>
-            <text class="t-sub" x="62" y="221">работает 24/7</text>
+            <text class="t-title" x="62" y="202">Работает без вас</text>
+            <text class="t-sub" x="62" y="221">ночью, в выходные, пока вы заняты</text>
           </g>
           <g>
             <rect class="node n4" x="12" y="262" width="316" height="56" rx="12"/>
             <circle class="dot" cx="40" cy="290" r="5"/>
-            <text class="t-title" x="62" y="286">Результат</text>
-            <text class="t-sub" x="62" y="305">публикация, уведомление, отчёт</text>
+            <text class="t-title" x="62" y="286">Вы получаете результат</text>
+            <text class="t-sub" x="62" y="305">готовое дело или сообщение в Telegram</text>
           </g>
 
           <!-- packets: one loop of 6s, each segment gets its own 1.5s window -->
@@ -302,126 +316,137 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
         </svg>
 
         <div class="log" id="log" aria-live="off"></div>
-        <p class="pipeline-cap">Схема типичной автоматизации и пример журнала её работы.</p>
+        <p class="pipeline-cap">Как это выглядит для вас и пример сообщений, которые вы будете видеть.</p>
       </div>
     </div>
   </div>
 
-  <!-- ===== Projects ===== -->
-  <section id="projects">
+  <!-- ===== What I solve ===== -->
+  <section id="solve">
     <div class="wrap">
       <div class="section-head">
-        <h2>Проекты</h2>
-        <p>Всё, что здесь показано, работает на реальных задачах: от продукта для покупателей до личных инструментов.</p>
+        <h2>Какие задачи я решаю</h2>
+        <p>Четыре готовых примера. У каждого сначала описана проблема, потом то, что вы получаете. Если ваша задача другая, но похожа по смыслу, её тоже можно автоматизировать.</p>
       </div>
 
       <article class="project featured">
         <div>
-          <span class="badge">Коммерческий продукт</span>
-          <h3>Автозагрузка видео в TikTok</h3>
-          <p class="kind">Python, Telegram-бот, десктоп-приложение, VPS</p>
+          <span class="badge">Готовый продукт</span>
+          <h3>Автовыкладка видео в TikTok</h3>
+          <p class="kind">Для тех, кто ведёт несколько аккаунтов</p>
         </div>
         <div>
-          <p>Система, которая сама скачивает, обрабатывает и выкладывает видео в TikTok сразу с нескольких аккаунтов. Я продаю её покупателям как готовый продукт и разворачиваю на отдельном сервере под каждого.</p>
-          <ul class="parts">
-            <li>Telegram-бот для управления: аккаунты, прокси и настройки меняются командами прямо из чата</li>
-            <li>Приложение с интерфейсом: скачивает видео с YouTube и каналов, обрабатывает их и раздаёт по аккаунтам</li>
-            <li>Режим «аудио с YouTube и фон»: звук накладывается на фоновое видео и обрезается в вертикальный формат 9:16</li>
-            <li>Публикация по очереди с паузой между постами для каждого аккаунта</li>
-            <li>Первый запуск без ручной правки файлов: покупатель вводит токен бота, остальное настраивается само</li>
-            <li>На сервере работает как служба: сама перезапускается после сбоя и ведёт журнал</li>
-          </ul>
-          <ul class="tags" aria-label="Технологии">
-            <li>Python</li>
-            <li>Telegram-бот</li>
-            <li>tkinter</li>
-            <li>yt-dlp</li>
-            <li>FFmpeg</li>
-            <li>Playwright</li>
-            <li>systemd</li>
-            <li>VPS</li>
-          </ul>
+          <div class="field"><b>Проблема</b><p>Выкладывать ролики в несколько аккаунтов каждый день вручную долго, а пропуски сбивают регулярность.</p></div>
+          <div class="field"><b>Что делает система</b><p>Сама скачивает видео, обрабатывает их, при необходимости накладывает звук на фоновое видео в вертикальном формате и выкладывает по аккаунтам по очереди, с паузами между постами.</p></div>
+          <div class="field"><b>Что вы получаете</b><p>Аккаунты ведутся сами, а вы управляете всем командами в Telegram. Система стоит на отдельном сервере и работает без вашего компьютера. Настраиваю её под вас.</p></div>
         </div>
       </article>
 
       <article class="project">
         <div>
-          <h3>P2P-обменник BTC и USDT</h3>
-          <p class="kind">Telegram-бот</p>
+          <h3>Обменник BTC и USDT в Telegram</h3>
+          <p class="kind">Для тех, кто принимает заявки на обмен</p>
         </div>
         <div>
-          <p>Бот для обмена криптовалюты между людьми. Клиент оставляет заявку в чате, оператор подтверждает сделку вручную, а настройки меняются через файл конфигурации без правки кода.</p>
-          <ul class="tags" aria-label="Технологии">
-            <li>Python</li>
-            <li>aiogram 3</li>
-            <li>SQLite</li>
-          </ul>
+          <div class="field"><b>Проблема</b><p>Заявки приходят в личные сообщения, и каждого клиента приходится вести по шагам вручную.</p></div>
+          <div class="field"><b>Что делает бот</b><p>Принимает заявку, задаёт клиенту нужные вопросы и передаёт готовую заявку оператору.</p></div>
+          <div class="field"><b>Что вы получаете</b><p>Клиент проходит весь путь в чате, а вам остаётся подтвердить сделку. Основные параметры меняются в файле настроек без программиста.</p></div>
         </div>
       </article>
 
       <article class="project">
         <div>
           <h3>OLX Radar</h3>
-          <p class="kind">Telegram WebApp</p>
+          <p class="kind">Для тех, кто следит за объявлениями на OLX</p>
         </div>
         <div>
-          <p>Инструмент мониторинга объявлений на OLX. Открывается прямо в Telegram как мини-приложение, чтобы быстро видеть новые предложения, не заходя на сайт.</p>
-          <ul class="tags" aria-label="Технологии">
-            <li>Telegram WebApp</li>
-            <li>Парсинг</li>
-            <li>Мониторинг</li>
-          </ul>
+          <div class="field"><b>Проблема</b><p>Хорошие предложения быстро разбирают, а сидеть на сайте и обновлять страницу целый день невозможно.</p></div>
+          <div class="field"><b>Что делает инструмент</b><p>Сам следит за объявлениями и показывает новые в мини-приложении прямо в Telegram.</p></div>
+          <div class="field"><b>Что вы получаете</b><p>Свежие предложения всегда под рукой, и не нужно держать сайт открытым.</p></div>
         </div>
       </article>
 
       <article class="project">
         <div>
           <h3>Калькулятор цен</h3>
-          <p class="kind">Telegram-бот</p>
+          <p class="kind">Для тех, кто торгует на игровых площадках</p>
         </div>
         <div>
-          <p>Агрегатор цен на игровые предметы. Бот ищет нужный предмет сразу на Playerok, FunPay и Lolz и показывает результат в течение 8 секунд.</p>
-          <ul class="tags" aria-label="Технологии">
-            <li>Python</li>
-            <li>Агрегация данных</li>
-            <li>Playerok</li>
-            <li>FunPay</li>
-            <li>Lolz</li>
-          </ul>
+          <div class="field"><b>Проблема</b><p>Чтобы узнать цену предмета, нужно открыть несколько площадок и сравнивать вручную.</p></div>
+          <div class="field"><b>Что делает бот</b><p>Вы пишете ему название предмета, а он сам ищет цены на Playerok, FunPay и Lolz.</p></div>
+          <div class="field"><b>Что вы получаете</b><p>Сравнение цен в течение 8 секунд без ручного поиска по сайтам.</p></div>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- ===== Skills ===== -->
-  <section id="skills">
+  <!-- ===== Who it's for ===== -->
+  <section id="for-whom">
     <div class="wrap">
       <div class="section-head">
-        <h2>Что делаю</h2>
-        <p>Три направления, в которых я работаю чаще всего.</p>
+        <h2>Кому подойдёт</h2>
+        <p>Автоматизация нужна не только программистам. Если часть дня уходит на одни и те же действия, их можно передать скрипту.</p>
       </div>
       <dl class="skills">
         <div>
-          <dt>Telegram-боты и мини-приложения</dt>
-          <dd>Боты для заявок, уведомлений и поиска информации. Мини-приложения внутри Telegram, когда кнопок в чате мало.</dd>
+          <dt>Предпринимателям и малому бизнесу</dt>
+          <dd>Приём заявок, уведомления о новых заказах, ответы на типовые вопросы клиентов, учёт. Всё это можно вести без ручной переписки.</dd>
         </div>
         <div>
-          <dt>Автоматизация контента и аккаунтов</dt>
-          <dd>Системы, которые готовят, обрабатывают и публикуют материалы по расписанию, пока вы занимаетесь другими делами.</dd>
+          <dt>Онлайн-продавцам</dt>
+          <dd>Слежение за ценами конкурентов, сбор данных с площадок, обновление товаров и остатков без ежедневных ручных обходов сайтов.</dd>
         </div>
         <div>
-          <dt>Парсеры и сбор данных</dt>
-          <dd>Сбор цен, объявлений и предложений с нескольких площадок в одном месте, быстро и в удобном виде.</dd>
+          <dt>Тем, кто работает с контентом</dt>
+          <dd>Публикации по расписанию, обработка видео и картинок, ведение нескольких аккаунтов в соцсетях без постоянного ручного контроля.</dd>
+        </div>
+        <div>
+          <dt>Менеджерам и сотрудникам офиса</dt>
+          <dd>Сбор данных в таблицы, готовые отчёты, рассылки, сортировка и переименование файлов. То, на что уходят часы каждую неделю.</dd>
+        </div>
+        <div>
+          <dt>Фрилансерам и небольшим командам</dt>
+          <dd>Повторяющиеся рабочие операции, напоминания, выгрузки и проверки, чтобы время уходило на работу, а не на механические действия.</dd>
+        </div>
+        <div>
+          <dt>Всем, у кого есть своя рутина</dt>
+          <dd>Если вы каждый день повторяете одно и то же на компьютере или в телефоне, расскажите об этом. Скорее всего, это можно автоматизировать.</dd>
         </div>
       </dl>
+      <p class="tech-note">Не уверены, подойдёт ли вам? Напишите, что делаете руками, и я честно отвечу, есть ли смысл это автоматизировать.</p>
+    </div>
+  </section>
 
-      <div class="stack">
-        <h3>Стек</h3>
-        <ul>
-          <li class="main">Python</li>
-          <li class="main">Go</li>
-        </ul>
+  <!-- ===== Benefits ===== -->
+  <section id="benefits">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Что вы получите</h2>
+        <p>Не набор файлов, а работающее решение, которым можно пользоваться сразу.</p>
       </div>
+      <ul class="benefits">
+        <li>
+          <h3>Работает без вашего участия</h3>
+          <p>Система запускается на отдельном сервере и делает своё дело круглые сутки, даже когда ваш компьютер выключен.</p>
+        </li>
+        <li>
+          <h3>Управление из Telegram</h3>
+          <p>Команды и уведомления приходят в чат. Не нужно разбираться в программах и настройках.</p>
+        </li>
+        <li>
+          <h3>Сделано под вашу задачу</h3>
+          <p>Я не продаю шаблон. Сначала разбираю, как вы работаете сейчас, и подстраиваю решение под этот процесс.</p>
+        </li>
+        <li>
+          <h3>Запуск без возни</h3>
+          <p>Установку и настройку на сервере беру на себя. От вас обычно нужны только пара данных при первом запуске.</p>
+        </li>
+        <li>
+          <h3>Поддержка после запуска</h3>
+          <p>Если что-то сломалось или сайт изменил правила, я исправляю это, и вам не нужно разбираться самому.</p>
+        </li>
+      </ul>
+      <p class="tech-note">Пишу на Python и Go. Если вам важны технические подробности, расскажу, когда обсудим задачу.</p>
     </div>
   </section>
 
@@ -429,25 +454,25 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <section id="process">
     <div class="wrap">
       <div class="section-head">
-        <h2>Как работаю</h2>
+        <h2>Как это проходит</h2>
         <p>Без долгих согласований: сначала рабочий результат, потом доработки.</p>
       </div>
       <ol class="steps">
         <li>
-          <h3>Разбираем задачу</h3>
-          <p>Вы описываете, что сейчас делается руками. Я уточняю детали и называю сроки.</p>
+          <h3>Вы рассказываете задачу</h3>
+          <p>Описываете, что сейчас делается руками. Можно простыми словами, без технических терминов.</p>
         </li>
         <li>
-          <h3>Делаю прототип</h3>
-          <p>Быстро собираю рабочую версию, чтобы вы сразу проверили её на реальных данных.</p>
+          <h3>Я называю сроки и стоимость</h3>
+          <p>Объясняю, что именно получится, за какое время и сколько это будет стоить.</p>
         </li>
         <li>
-          <h3>Запускаю на сервере</h3>
-          <p>Разворачиваю на VPS и настраиваю так, чтобы всё работало без вашего участия.</p>
+          <h3>Вы смотрите рабочую версию</h3>
+          <p>Показываю, как это работает, и проверяем на ваших реальных данных до запуска.</p>
         </li>
         <li>
-          <h3>Сопровождаю</h3>
-          <p>Исправляю сбои и добавляю нужное, когда площадки меняют правила.</p>
+          <h3>Запускаю и сопровождаю</h3>
+          <p>Ставлю на сервер, настраиваю, а потом поправляю и дорабатываю по мере необходимости.</p>
         </li>
       </ol>
     </div>
@@ -457,12 +482,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <section id="contact">
     <div class="wrap">
       <div class="contact">
-        <h2>Есть рутина, которую пора отдать скрипту?</h2>
-        <p>Напишите, что нужно автоматизировать. Отвечу, как это можно сделать и сколько времени займёт.</p>
+        <h2>Расскажите, что отнимает у вас время</h2>
+        <p>Напишите в Telegram одним сообщением, что вы делаете руками. Отвечу, можно ли это автоматизировать, как и за какое время.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://t.me/aleks8744" target="_blank" rel="noopener">Написать в Telegram</a>
-          <!-- TODO: замени на свою почту или удали кнопку -->
-          <a class="btn btn-ghost" href="mailto:your@email.com">Написать на почту</a>
         </div>
       </div>
     </div>
@@ -473,7 +496,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 <footer>
   <div class="wrap">
     <span>© <span id="year">2026</span> alexmrnk</span>
-    <span>Python, Go, боты и автоматизация</span>
+    <span>Боты и автоматизация под вашу задачу</span>
   </div>
 </footer>
 
@@ -626,12 +649,12 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 
   /* example log */
   var messages = [
-    'расписание сработало, задача в очереди',
-    'видео обработано, готово к публикации',
-    'публикация отправлена',
-    'найдено новое объявление, уведомление в Telegram',
-    'цены собраны с трёх площадок',
-    'заявка принята, оператору отправлено сообщение'
+    'видео опубликовано в аккаунте №1',
+    'видео опубликовано в аккаунте №2',
+    'найдено новое объявление, вам отправлено уведомление',
+    'цены сравнены на трёх площадках за 8 секунд',
+    'заявка на обмен принята, оператору отправлено сообщение',
+    'все аккаунты отработали по очереди'
   ];
   var log = document.getElementById('log');
   var lines = [];
